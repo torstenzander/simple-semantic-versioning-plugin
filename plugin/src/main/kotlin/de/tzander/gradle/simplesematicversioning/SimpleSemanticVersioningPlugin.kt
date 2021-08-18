@@ -8,6 +8,7 @@ import org.gradle.api.Project
 
 class SimpleSemanticVersioningPlugin: Plugin<Project> {
     override fun apply(project: Project) {
+        project.extensions.create("simplesematicversioning", SimpleSemanticVersioningExtension::class.java)
         project.run {
             tasks.apply {
                 register("increasePatch", IncreasePatchVersionTask::class.java) {
@@ -19,7 +20,9 @@ class SimpleSemanticVersioningPlugin: Plugin<Project> {
                 register("increaseMajor", IncreaseMajorVersionTask::class.java) {
                     it.group = "increaseMajor"
                 }
+
             }
+
         }
     }
 }
