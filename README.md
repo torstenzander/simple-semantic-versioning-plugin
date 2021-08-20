@@ -1,6 +1,6 @@
 #Simple Semantic Versioning Plugin
 
-This plugin increases the version by one. You can define additonal files.
+This plugin increases semantic versions by one. You can define additinnal files.
 
 `./gradlew increasePatch`
 

@@ -8,3 +8,4 @@
 gradle-app.setting
 !gradle-wrapper.jar
 .gitattributes
+/gradle.properties
