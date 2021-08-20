@@ -1,8 +1,8 @@
-package de.tzander.gradle.simplesematicversioning.tasks
+package de.torstenzander.gradle.simplesematicversioning.tasks
 
-import de.tzander.gradle.simplesematicversioning.PropertyFileHandler
-import de.tzander.gradle.simplesematicversioning.SematicVersion
-import de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningExtension
+import de.torstenzander.gradle.simplesematicversioning.PropertyFileHandler
+import de.torstenzander.gradle.simplesematicversioning.SematicVersion
+import de.torstenzander.gradle.simplesematicversioning.SimpleSemanticVersioningExtension
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
 import java.io.File

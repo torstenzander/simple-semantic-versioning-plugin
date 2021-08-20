@@ -5,7 +5,7 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.14.0'
 }
 
-group = 'de.tzander.gradle'
+group = 'de.torstenzander.gradle.simplesematicversioning'
 version = '0.2.0'
 
 repositories {
@@ -13,24 +13,30 @@ repositories {
 }
 
 dependencies {
+    compile gradleApi()
     implementation platform('org.jetbrains.kotlin:kotlin-bom')
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
 }
 
+pluginBundle {
+    website = 'https://github.com/torstenzander/simple-semantic-versioning-plugin'
+    vcsUrl = 'https://github.com/torstenzander/simple-semantic-versioning-plugin.git'
+    tags = listOf('version', 'semantic', 'increase')
+}
+
 gradlePlugin {
     plugins {
         simplesematicversioning {
             id = 'de.tzander.gradle.simplesematicversioning'
-            displayName = "Simple Semantic Versioninng Plugin"
+            displayName = "Simple Semantic Versioning Plugin"
             description = "This plugin increases semantic versions by one. You can define additinnal files."
             implementationClass = 'de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningPlugin'
         }
     }
 }
 
-// Add a source set for the functional test suite
 sourceSets {
     functionalTest {
     }
@@ -39,7 +45,6 @@ sourceSets {
 gradlePlugin.testSourceSets(sourceSets.functionalTest)
 configurations.functionalTestImplementation.extendsFrom(configurations.testImplementation)
 
-// Add a task to run the functional tests
 tasks.register('functionalTest', Test) {
     testClassesDirs = sourceSets.functionalTest.output.classesDirs
     classpath = sourceSets.functionalTest.runtimeClasspath
@@ -49,10 +54,3 @@ tasks.named('check') {
     dependsOn(tasks.functionalTest)
 }
 
-publishing {
-    pluginBundle {
-        website = "https://github.com/torstenzander/simple-semantic-versioning-plugin"
-        vcsUrl = "https://github.com/torstenzander/simple-semantic-versioning-plugin.git"
-        tags = listOf("version", "semantic")
-    }
-}

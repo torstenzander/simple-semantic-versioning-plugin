@@ -1,6 +1,6 @@
-package de.tzander.gradle.simplesematicversioning.tasks
+package de.torstenzander.gradle.simplesematicversioning.tasks
 
-import de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningExtension
+import de.torstenzander.gradle.simplesematicversioning.SimpleSemanticVersioningExtension
 import org.gradle.api.tasks.TaskAction
 
 abstract class IncreaseMinorVersionTask : AbstractVersionTask() {

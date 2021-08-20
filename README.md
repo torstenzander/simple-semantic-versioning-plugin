@@ -11,7 +11,7 @@ This plugin increases semantic versions by one. You can define additinnal files.
 
 ```
 plugins {
-    id 'de.tzander.gradle.simplesematicversioning' version '0.2.0'
+    id 'de.torstenzander.gradle.simplesematicversioning' version '0.2.0'
 }
 
 simplesematicversioning {

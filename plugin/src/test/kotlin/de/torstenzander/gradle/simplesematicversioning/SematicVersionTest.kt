@@ -1,5 +1,6 @@
-package de.tzander.gradle.simplesematicversioning
+package de.torstenzander.gradle.simplesematicversioning
 
+import de.torstenzander.gradle.simplesematicversioning.SematicVersion
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
