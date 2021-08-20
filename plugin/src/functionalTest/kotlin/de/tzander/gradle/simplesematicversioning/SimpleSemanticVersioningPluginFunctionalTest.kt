@@ -23,29 +23,29 @@ class SimpleSemanticVersioningPluginFunctionalTest {
                 id('de.tzander.gradle.simplesematicversioning')
             }
             simplesematicversioning {
-                 files = [".gitlab-ci.yml", "Dockerfile"]
+                files = [".gitlab-ci.yml", "Dockerfile"]
             }
         """)
     }
-    @Test fun `can run patch update`() {
+    @Test fun `increase patch version`() {
         val result = runGradleTask("increasePatch")
 
         assertTrue(result.output.contains("12.4.3"))
     }
 
-    @Test fun `can run minor update`() {
+    @Test fun `increase minor version`() {
         val result = runGradleTask("increaseMinor")
 
         assertTrue(result.output.contains("12.5.0"))
     }
 
-    @Test fun `can run major update`() {
+    @Test fun `increase major version`() {
         val result = runGradleTask("increaseMajor")
 
         assertTrue(result.output.contains("13.0.0"))
     }
 
-    @Test fun `can run major update in otherfile`() {
+    @Test fun `increase major version and update in configured file`() {
         val result = runGradleTask("increaseMajor")
 
         val file = File("$projectDir/.gitlab-ci.yml")
@@ -55,7 +55,7 @@ class SimpleSemanticVersioningPluginFunctionalTest {
         assertTrue(result.output.contains("File updated: .gitlab-ci.yml"))
     }
 
-    @Test fun `can run minor update in otherfile`() {
+    @Test fun `increase minor version and update in configured file`() {
         val result = runGradleTask("increaseMinor")
 
         val file = File("$projectDir/.gitlab-ci.yml")
@@ -65,7 +65,7 @@ class SimpleSemanticVersioningPluginFunctionalTest {
         assertTrue(result.output.contains("File updated: .gitlab-ci.yml"))
     }
 
-    @Test fun `can run patch update in otherfile`() {
+    @Test fun `increase patch version nd update in configured files`() {
         val result = runGradleTask("increasePatch")
 
         val file = File("$projectDir/.gitlab-ci.yml")
