@@ -1,4 +1,4 @@
-#Simple Semantic Versioning Plugin
+# Simple Semantic Versioning Plugin
 
 This plugin increases semantic versions by one. You can define additinnal files.
 
@@ -19,7 +19,7 @@ simplesematicversioning {
 }
 ```
 
-##Possible version declarations
+## Possible version declarations
 
 * x.x.x
 * x.x.x-SOMESTRING (like SNAPSHOT OR RELEASE) 

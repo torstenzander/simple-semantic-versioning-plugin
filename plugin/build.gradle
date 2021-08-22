@@ -23,16 +23,16 @@ dependencies {
 pluginBundle {
     website = 'https://github.com/torstenzander/simple-semantic-versioning-plugin'
     vcsUrl = 'https://github.com/torstenzander/simple-semantic-versioning-plugin.git'
-    tags = listOf('version', 'semantic', 'increase')
+    tags = ['version', 'semantic', 'increase']
 }
 
 gradlePlugin {
     plugins {
         simplesematicversioning {
             id = 'de.tzander.gradle.simplesematicversioning'
-            displayName = "Simple Semantic Versioning Plugin"
-            description = "This plugin increases semantic versions by one. You can define additinnal files."
-            implementationClass = 'de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningPlugin'
+            displayName = 'Simple Semantic Versioning Plugin'
+            description = "This plugin increases semantic versions by one. You can define additional files."
+            implementationClass = 'de.torstenzander.gradle.simplesematicversioning.SimpleSemanticVersioningPlugin'
         }
     }
 }
@@ -53,4 +53,14 @@ tasks.register('functionalTest', Test) {
 tasks.named('check') {
     dependsOn(tasks.functionalTest)
 }
+
+publishing {
+    repositories {
+        maven {
+            name = 'localPluginRepository'
+            url = '/Users/torsten/.m2'
+        }
+    }
+}
+
 
