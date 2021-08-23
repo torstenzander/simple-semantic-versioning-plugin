@@ -1,6 +1,6 @@
 package de.tzander.gradle.simplesematicversioning
 
-class SematicVersion constructor(version: String) {
+class SemanticVersion constructor(version: String) {
     var major: Int
     var minor: Int
     var patch: Int

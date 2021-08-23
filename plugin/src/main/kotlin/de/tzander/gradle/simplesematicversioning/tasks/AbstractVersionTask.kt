@@ -1,7 +1,7 @@
 package de.tzander.gradle.simplesematicversioning.tasks
 
 import de.tzander.gradle.simplesematicversioning.PropertyFileHandler
-import de.tzander.gradle.simplesematicversioning.SematicVersion
+import de.tzander.gradle.simplesematicversioning.SemanticVersion
 import de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningExtension
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
@@ -15,7 +15,7 @@ abstract class AbstractVersionTask : DefaultTask() {
     var oldVersion: String = fileHandler.readVersionFromFile()
 
     @get:Input
-    var semanticVersion: SematicVersion = SematicVersion(oldVersion)
+    var semanticVersion: SemanticVersion = SemanticVersion(oldVersion)
 
     @get:Input
     val extension = project.extensions.getByType(SimpleSemanticVersioningExtension::class.java)
