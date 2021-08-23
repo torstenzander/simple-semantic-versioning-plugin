@@ -1,6 +1,6 @@
 # Simple Semantic Versioning Plugin
 
-This plugin increases the semantic version in **version.gradle** by one 
+This plugin increases the semantic version in **version.properties** by one 
 for patch, minor and major version updates. 
 You can define additional files in your gradle.build configuration.
 

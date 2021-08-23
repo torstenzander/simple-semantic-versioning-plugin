@@ -11,7 +11,7 @@ class PropertyFileHandler constructor(private val project: Project) {
     fun readVersionFromFile(): String {
         val projectDir = project.getProperties().get("projectDir")
         properties = Properties()
-        propertyFile = File(projectDir.toString() + "/version.gradle")
+        propertyFile = File(projectDir.toString() + "/version.properties")
         properties.load(propertyFile.inputStream())
         return properties.getProperty("version")
     }
