@@ -6,7 +6,12 @@ plugins {
 }
 
 group = 'de.tzander.gradle.simplesematicversioning'
-version = '0.3.0'
+version = '0.5.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 repositories {
     mavenCentral()

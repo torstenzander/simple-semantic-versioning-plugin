@@ -15,7 +15,7 @@ class SimpleSemanticVersioningPluginFunctionalTest {
         projectDir = File("build/functionalTest")
         projectDir.mkdirs()
         projectDir.resolve("settings.gradle").writeText("")
-        projectDir.resolve("version.properties").writeText("version=12.4.2")
+        projectDir.resolve("gradle.properties").writeText("version=12.4.2")
         projectDir.resolve(".gitlab-ci.yml").writeText("12.4.2")
         projectDir.resolve("Dockerfile").writeText("12.4.2")
         projectDir.resolve("build.gradle").writeText("""
