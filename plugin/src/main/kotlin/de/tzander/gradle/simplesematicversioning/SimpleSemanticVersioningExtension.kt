@@ -1,4 +1,4 @@
-package de.torstenzander.gradle.simplesematicversioning
+package de.tzander.gradle.simplesematicversioning
 
 abstract class SimpleSemanticVersioningExtension {
     var files: List<String>? = null

@@ -1,4 +1,4 @@
-package de.torstenzander.gradle.simplesematicversioning
+package de.tzander.gradle.simplesematicversioning
 
 import org.gradle.api.Project
 import java.io.File

@@ -1,8 +1,8 @@
-package de.torstenzander.gradle.simplesematicversioning
+package de.tzander.gradle.simplesematicversioning
 
-import de.torstenzander.gradle.simplesematicversioning.tasks.IncreaseMajorVersionTask
-import de.torstenzander.gradle.simplesematicversioning.tasks.IncreaseMinorVersionTask
-import de.torstenzander.gradle.simplesematicversioning.tasks.IncreasePatchVersionTask
+import de.tzander.gradle.simplesematicversioning.tasks.IncreaseMajorVersionTask
+import de.tzander.gradle.simplesematicversioning.tasks.IncreaseMinorVersionTask
+import de.tzander.gradle.simplesematicversioning.tasks.IncreasePatchVersionTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

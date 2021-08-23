@@ -5,8 +5,8 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.14.0'
 }
 
-group = 'de.torstenzander.gradle.simplesematicversioning'
-version = '0.2.0'
+group = 'de.tzander.gradle.simplesematicversioning'
+version = '0.2.1'
 
 repositories {
     mavenCentral()
@@ -32,7 +32,7 @@ gradlePlugin {
             id = 'de.tzander.gradle.simplesematicversioning'
             displayName = 'Simple Semantic Versioning Plugin'
             description = "This plugin increases semantic versions by one. You can define additional files."
-            implementationClass = 'de.torstenzander.gradle.simplesematicversioning.SimpleSemanticVersioningPlugin'
+            implementationClass = 'de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningPlugin'
         }
     }
 }
@@ -52,15 +52,6 @@ tasks.register('functionalTest', Test) {
 
 tasks.named('check') {
     dependsOn(tasks.functionalTest)
-}
-
-publishing {
-    repositories {
-        maven {
-            name = 'localPluginRepository'
-            url = '/Users/torsten/.m2'
-        }
-    }
 }
 
 

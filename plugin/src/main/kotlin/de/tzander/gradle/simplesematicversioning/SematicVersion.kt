@@ -1,4 +1,4 @@
-package de.torstenzander.gradle.simplesematicversioning
+package de.tzander.gradle.simplesematicversioning
 
 class SematicVersion constructor(version: String) {
     var major: Int
