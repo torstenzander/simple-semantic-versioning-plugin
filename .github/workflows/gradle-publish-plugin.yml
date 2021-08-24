@@ -22,7 +22,7 @@ jobs:
         settings-path: ${{ github.workspace }}
 
     - name: Check Tag
-      run: echo ${{ GITHUB_REF }}
+      run: echo $GITHUB_REF
 
     - name: Build with Gradle
       run: gradle build
