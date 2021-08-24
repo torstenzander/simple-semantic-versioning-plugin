@@ -29,6 +29,6 @@ jobs:
     - name: Publish to Gradle
       run: gradle publishPlugins
       env:
-        key: ${{ GRADLE_PUBLISH_KEY }}
-        secret: ${{ GRADLE_PUBLISH_SECRET }}
+        key: $GRADLE_PUBLISH_KEY
+        secret: $GRADLE_PUBLISH_SECRET
 
