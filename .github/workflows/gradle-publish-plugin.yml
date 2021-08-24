@@ -3,6 +3,7 @@ name: Gradle Plugin Publishing
 on:
   push:
     tags:
+      - 'v*'
 
 jobs:
   build:
@@ -29,5 +30,5 @@ jobs:
     - name: Publish to Gradle
       run: gradle publishPlugins
       env:
-        key: ${{ GRADLE_KEY }}
-        secret: ${{ GRADLE_SECRET }}
+        key: ${{ env.GRADLE_KEY }}
+        secret: ${{ env.GRADLE_SECRET }}
