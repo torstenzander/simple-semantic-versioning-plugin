@@ -4,7 +4,7 @@ class SemanticVersion constructor(version: String) {
     var major: Int
     var minor: Int
     var patch: Int
-    private var snapshot: String = ""
+    private var postfix: String = ""
 
     init {
         val versionParts = version.split(".", "-")
@@ -13,7 +13,7 @@ class SemanticVersion constructor(version: String) {
         patch = versionParts[2].toInt()
         if (versionParts.size > 3) {
             val snapshotString = versionParts[3]
-            snapshot = "-$snapshotString"
+            postfix = "-$snapshotString"
         }
     }
 
@@ -33,6 +33,6 @@ class SemanticVersion constructor(version: String) {
     }
 
     override fun toString(): String {
-        return "$major.$minor.$patch$snapshot"
+        return "$major.$minor.$patch$postfix"
     }
 }
