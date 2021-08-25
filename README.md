@@ -11,7 +11,7 @@ In case you have a file with the several same version numbers I won't work.**
 
 ```
 plugins {
-    id 'de.tzander.gradle.simplesematicversioning' version '0.2.0'
+    id 'de.tzander.gradle.simplesematicversioning' version '0.5.1'
 }
 
 simplesematicversioning {

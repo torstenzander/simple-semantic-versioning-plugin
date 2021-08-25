@@ -36,7 +36,7 @@ gradlePlugin {
         simplesematicversioning {
             id = 'de.tzander.gradle.simplesematicversioning'
             displayName = 'Simple Semantic Versioning Plugin'
-            description = "This plugin increases semantic versions by one. You can define additional files."
+            description = 'This plugin increases semantic versions by one. You can define additional files.'
             implementationClass = 'de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningPlugin'
         }
     }
