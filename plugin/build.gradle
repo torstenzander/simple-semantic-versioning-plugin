@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'de.tzander.gradle.simplesematicversioning'
-version = '0.5.1'
+version = '0.5.9'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8

@@ -23,6 +23,22 @@ jobs:
     - name: Check Tag
       run: echo $GITHUB_REF
 
+    - name: write key
+        run: echo $env.GRADLE_PUBLISH_KEY
+    - name: write key 2
+        run: echo $GRADLE_PUBLISH_KEY
+
+    - name: Write gradle.properties
+      env:
+        KEY: ${{ env.GRADLE_PUBLISH_KEY }}
+        SECRET: ${{ secrets.GRADLE_PUBLISH_SECRET }}
+      shell: bash
+      run: |
+        mkdir -p ~/.gradle/
+        echo "::set-env name=GRADLE_USER_HOME::$HOME/.gradle"
+        echo gradle.publish.key=${KEY} > ~/.gradle/gradle.properties
+        echo gradle.publish.secret=${SECRET} > ~/.gradle/gradle.properties
+
     - name: Build with Gradle
       run: gradle build
 
