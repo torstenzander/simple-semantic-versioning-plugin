@@ -24,7 +24,7 @@ jobs:
       run: echo $GITHUB_REF
 
     - name: write key
-        run: echo $GRADLE_PUBLISH_KEY
+        run: echo $secrets.GRADLE_PUBLISH_KEY
 
     - name: Write gradle.properties
       env:
