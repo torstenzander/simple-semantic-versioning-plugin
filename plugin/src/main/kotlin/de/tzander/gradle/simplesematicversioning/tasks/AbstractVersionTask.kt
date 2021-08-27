@@ -18,7 +18,7 @@ abstract class AbstractVersionTask : DefaultTask() {
     var semanticVersion: SemanticVersion = SemanticVersion(oldVersion)
 
     @get:Input
-    val extension = project.extensions.getByType(SimpleSemanticVersioningExtension::class.java)
+    val extension: SimpleSemanticVersioningExtension = project.extensions.getByType(SimpleSemanticVersioningExtension::class.java)
 
     protected fun replaceInFiles(extension: SimpleSemanticVersioningExtension) {
         extension.files?.forEach {

@@ -12,8 +12,8 @@ class SemanticVersion constructor(version: String) {
         minor = versionParts[1].toInt()
         patch = versionParts[2].toInt()
         if (versionParts.size > 3) {
-            val snapshotString = versionParts[3]
-            postfix = "-$snapshotString"
+            val postfixString = versionParts[3]
+            postfix = "-$postfixString"
         }
     }
 

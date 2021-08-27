@@ -9,7 +9,7 @@ abstract class IncreasePatchVersionTask : AbstractVersionTask() {
         semanticVersion.increasePatch()
         fileHandler.savePropertyToFile(semanticVersion.toString())
 
-        println("Updated to patch version:$semanticVersion")
+        println("Updated to patch version: $semanticVersion")
         replaceInFiles(extension)
     }
 }

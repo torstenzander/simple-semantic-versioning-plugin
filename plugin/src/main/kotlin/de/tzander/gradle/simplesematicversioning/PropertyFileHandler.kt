@@ -12,7 +12,7 @@ class PropertyFileHandler constructor(private val project: Project) {
     private lateinit var propertyFile: File
 
     fun readVersionFromFile(): String {
-        val projectDir = project.getProperties().get("projectDir")
+        val projectDir = project.properties["projectDir"]
         propertyFile = File(projectDir.toString() + PROPERTY_FILE)
         properties.load(propertyFile.inputStream())
         return properties.getProperty("version")

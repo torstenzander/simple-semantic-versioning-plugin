@@ -6,7 +6,7 @@ import de.tzander.gradle.simplesematicversioning.tasks.IncreasePatchVersionTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-class SimpleSemanticVersioningPlugin: Plugin<Project> {
+class SimpleSemanticVersioningPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.extensions.create("simplesematicversioning", SimpleSemanticVersioningExtension::class.java)
         project.run {
