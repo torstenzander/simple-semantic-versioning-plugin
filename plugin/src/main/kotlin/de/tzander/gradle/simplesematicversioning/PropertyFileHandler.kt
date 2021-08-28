@@ -1,6 +1,5 @@
 package de.tzander.gradle.simplesematicversioning
 
-import org.gradle.api.Project
 import java.io.File
 import java.util.*
 
@@ -22,4 +21,6 @@ class PropertyFileHandler constructor(private val projectDir: String) {
         properties.store(propertyFile.writer(), null)
         properties.load(propertyFile.inputStream())
     }
+
+
 }

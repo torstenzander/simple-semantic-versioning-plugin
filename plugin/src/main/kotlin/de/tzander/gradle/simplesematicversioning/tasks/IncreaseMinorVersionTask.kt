@@ -7,9 +7,10 @@ abstract class IncreaseMinorVersionTask : AbstractVersionTask() {
     @TaskAction
     fun execute() {
         semanticVersion.increaseMinor()
-        fileHandler.savePropertyToFile(semanticVersion.toString())
+        propertyFileHandler.savePropertyToFile(semanticVersion.toString())
 
         println("Updated to minor version: $semanticVersion")
-        replaceInFiles(extension)
+        fileHandler.replaceInFiles(project.rootDir.toString(), extension.files, oldVersion, semanticVersion)
+
     }
 }
