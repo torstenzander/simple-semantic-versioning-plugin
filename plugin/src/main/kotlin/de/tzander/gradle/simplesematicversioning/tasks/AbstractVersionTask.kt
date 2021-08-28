@@ -9,7 +9,7 @@ import java.io.File
 
 abstract class AbstractVersionTask : DefaultTask() {
     @get:Input
-    var fileHandler: PropertyFileHandler = PropertyFileHandler(project)
+    var fileHandler: PropertyFileHandler = PropertyFileHandler(project.properties["projectDir"].toString())
 
     @get:Input
     var oldVersion: String = fileHandler.readVersionFromFile()

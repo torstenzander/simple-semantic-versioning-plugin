@@ -6,14 +6,13 @@ import java.util.*
 
 const val PROPERTY_FILE = "/gradle.properties"
 
-class PropertyFileHandler constructor(private val project: Project) {
+class PropertyFileHandler constructor(private val projectDir: String) {
 
     private var properties: Properties = Properties()
     private lateinit var propertyFile: File
 
     fun readVersionFromFile(): String {
-        val projectDir = project.properties["projectDir"]
-        propertyFile = File(projectDir.toString() + PROPERTY_FILE)
+        propertyFile = File(projectDir + PROPERTY_FILE)
         properties.load(propertyFile.inputStream())
         return properties.getProperty("version")
     }

@@ -9,6 +9,11 @@ You can define additional files in your gradle.build configuration.
 **Be aware that this plugin only replaces the version number. 
 In case you have a file with the several same version numbers I won't work.**
 
+
+In gradle.properties
+    
+    version=12.2.1
+
 ```
 plugins {
     id 'de.tzander.gradle.simplesematicversioning' version '0.5.9'
