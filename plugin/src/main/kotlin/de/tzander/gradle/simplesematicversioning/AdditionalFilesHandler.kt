@@ -2,7 +2,7 @@ package de.tzander.gradle.simplesematicversioning
 
 import java.io.File
 
-class FileHandler  {
+class AdditionalFilesHandler  {
 
     fun replaceInFiles(rootDir: String, files: List<String>?, oldVersion: String, semanticVersion: SemanticVersion) {
         files?.forEach {

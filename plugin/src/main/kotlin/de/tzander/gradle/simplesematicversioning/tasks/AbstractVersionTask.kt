@@ -1,6 +1,6 @@
 package de.tzander.gradle.simplesematicversioning.tasks
 
-import de.tzander.gradle.simplesematicversioning.FileHandler
+import de.tzander.gradle.simplesematicversioning.AdditionalFilesHandler
 import de.tzander.gradle.simplesematicversioning.PropertyFileHandler
 import de.tzander.gradle.simplesematicversioning.SemanticVersion
 import de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningExtension
@@ -12,7 +12,7 @@ abstract class AbstractVersionTask : DefaultTask() {
     var propertyFileHandler: PropertyFileHandler = PropertyFileHandler(project.properties["projectDir"].toString())
 
     @get:Input
-    var fileHandler: FileHandler = FileHandler()
+    var additionalFilesHandler: AdditionalFilesHandler = AdditionalFilesHandler()
 
     @get:Input
     var oldVersion: String = propertyFileHandler.readVersionFromFile()

@@ -10,6 +10,6 @@ abstract class IncreasePatchVersionTask : AbstractVersionTask() {
         propertyFileHandler.savePropertyToFile(semanticVersion.toString())
 
         println("Updated to patch version: $semanticVersion")
-        fileHandler.replaceInFiles(project.rootDir.toString(), extension.files, oldVersion, semanticVersion)
+        additionalFilesHandler.replaceInFiles(project.rootDir.toString(), extension.files, oldVersion, semanticVersion)
     }
 }

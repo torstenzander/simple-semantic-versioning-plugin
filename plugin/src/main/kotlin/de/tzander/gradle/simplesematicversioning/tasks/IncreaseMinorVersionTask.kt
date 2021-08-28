@@ -10,7 +10,7 @@ abstract class IncreaseMinorVersionTask : AbstractVersionTask() {
         propertyFileHandler.savePropertyToFile(semanticVersion.toString())
 
         println("Updated to minor version: $semanticVersion")
-        fileHandler.replaceInFiles(project.rootDir.toString(), extension.files, oldVersion, semanticVersion)
+        additionalFilesHandler.replaceInFiles(project.rootDir.toString(), extension.files, oldVersion, semanticVersion)
 
     }
 }

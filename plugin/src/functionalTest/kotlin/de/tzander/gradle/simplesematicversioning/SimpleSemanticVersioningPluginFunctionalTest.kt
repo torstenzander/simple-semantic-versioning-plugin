@@ -1,9 +1,9 @@
 package de.tzander.gradle.simplesematicversioning
 
 import org.gradle.testkit.runner.BuildResult
-import java.io.File
 import org.gradle.testkit.runner.GradleRunner
 import org.junit.Before
+import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
@@ -20,13 +20,16 @@ class SimpleSemanticVersioningPluginFunctionalTest {
         projectDir.resolve("Dockerfile").writeText("12.4.2")
         projectDir.resolve("build.gradle").writeText("""
             plugins {
-                id('de.tzander.gradle.simplesematicversioning')
+                id("de.tzander.gradle.simplesematicversioning")
             }
             simplesematicversioning {
                 files = [".gitlab-ci.yml", "Dockerfile"]
             }
         """)
     }
+
+    //  files = [".gitlab-ci.yml": "api:", "Dockerfile": "jar."]
+
     @Test fun `increase patch version`() {
         val result = runGradleTask("increasePatch")
 
@@ -65,7 +68,7 @@ class SimpleSemanticVersioningPluginFunctionalTest {
         assertTrue(result.output.contains("File updated: .gitlab-ci.yml"))
     }
 
-    @Test fun `increase patch version nd update in configured files`() {
+    @Test fun `increase patch version and update in configured files`() {
         val result = runGradleTask("increasePatch")
 
         val file = File("$projectDir/.gitlab-ci.yml")
