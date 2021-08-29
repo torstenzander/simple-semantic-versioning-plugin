@@ -1,10 +1,12 @@
 package de.tzander.gradle.simplesematicversioning
 
 class SemanticVersion constructor(version: String) {
+
     var major: Int
     var minor: Int
     var patch: Int
     private var postfix: String = ""
+    var oldVersion: String = version
 
     init {
         val versionParts = version.split(".", "-")
@@ -32,7 +34,7 @@ class SemanticVersion constructor(version: String) {
         patch = 0
     }
 
-    override fun toString(): String {
+    fun newVersion(): String {
         return "$major.$minor.$patch$postfix"
     }
 }

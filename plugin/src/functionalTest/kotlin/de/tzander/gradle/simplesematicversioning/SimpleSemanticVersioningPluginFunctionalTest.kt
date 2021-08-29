@@ -16,14 +16,15 @@ class SimpleSemanticVersioningPluginFunctionalTest {
         projectDir.mkdirs()
         projectDir.resolve("settings.gradle").writeText("")
         projectDir.resolve("gradle.properties").writeText("version=12.4.2")
-        projectDir.resolve(".gitlab-ci.yml").writeText("12.4.2")
-        projectDir.resolve("Dockerfile").writeText("12.4.2")
+        projectDir.resolve(".gitlab-ci.yml").writeText("api-12.4.2")
+        projectDir.resolve("Dockerfile").writeText("jar.12.4.2")
         projectDir.resolve("build.gradle").writeText("""
             plugins {
                 id("de.tzander.gradle.simplesematicversioning")
             }
             simplesematicversioning {
                 files = [".gitlab-ci.yml", "Dockerfile"]
+                prefixes = ["api-", "jar."]
             }
         """)
     }

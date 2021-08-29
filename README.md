@@ -16,7 +16,7 @@ In gradle.properties
 
 ```
 plugins {
-    id 'de.tzander.gradle.simplesematicversioning' version '0.5.9'
+    id 'de.tzander.gradle.simplesematicversioning' version '0.6.0'
 }
 
 simplesematicversioning {
