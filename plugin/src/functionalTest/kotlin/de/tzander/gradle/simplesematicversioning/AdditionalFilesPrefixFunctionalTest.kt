@@ -7,7 +7,7 @@ import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
-class SimpleSemanticVersioningPluginFunctionalTest {
+class AdditionalFilesPrefixFunctionalTest {
 
     private lateinit var projectDir: File
 
@@ -16,45 +16,26 @@ class SimpleSemanticVersioningPluginFunctionalTest {
         projectDir.mkdirs()
         projectDir.resolve("settings.gradle").writeText("")
         projectDir.resolve("gradle.properties").writeText("version=12.4.2")
-        projectDir.resolve(".gitlab-ci.yml").writeText("12.4.2")
-        projectDir.resolve("Dockerfile").writeText("12.4.2")
+        projectDir.resolve(".gitlab-ci.yml").writeText("api.12.4.2")
+        projectDir.resolve("Dockerfile").writeText("jar-12.4.2")
         projectDir.resolve("build.gradle").writeText("""
             plugins {
                 id("de.tzander.gradle.simplesematicversioning")
             }
             simplesematicversioning {
                 files = [".gitlab-ci.yml", "Dockerfile"]
+                prefixes = ["api.", "jar-"]
             }
         """)
     }
 
-    //  files = [".gitlab-ci.yml": "api:", "Dockerfile": "jar."]
-
-    @Test fun `increase patch version`() {
-        val result = runGradleTask("increasePatch")
-
-        assertTrue(result.output.contains("12.4.3"))
-    }
-
-    @Test fun `increase minor version`() {
-        val result = runGradleTask("increaseMinor")
-
-        assertTrue(result.output.contains("12.5.0"))
-    }
-
-    @Test fun `increase major version`() {
-        val result = runGradleTask("increaseMajor")
-
-        assertTrue(result.output.contains("13.0.0"))
-    }
-
-    @Test fun `increase major version and update in configured file`() {
+    @Test fun `increase major version in file with prefix`() {
         val result = runGradleTask("increaseMajor")
 
         val file = File("$projectDir/.gitlab-ci.yml")
         val text = file.readText()
 
-        assertTrue(text.contains("13.0.0"))
+        assertTrue(text.contains("api.13.0.0"))
         assertTrue(result.output.contains("File updated: .gitlab-ci.yml"))
     }
 
