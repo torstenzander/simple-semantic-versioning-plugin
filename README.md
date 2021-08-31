@@ -14,7 +14,7 @@ In gradle.properties
 
 ```
 plugins {
-    id 'de.tzander.gradle.simplesematicversioning' version '0.6.0'
+    id 'de.tzander.gradle.simplesematicversioning' version '0.7.0'
 }
 
 simplesematicversioning {
@@ -35,5 +35,7 @@ simplesematicversioning {
 ## Possible version declarations
 
 * x.x.x
+* x.x.x-XX
+* x.x.x.XX
 
-Current Version does not support SNAPSHOT or RELEASE version.
+After the Version only - or . are allowed

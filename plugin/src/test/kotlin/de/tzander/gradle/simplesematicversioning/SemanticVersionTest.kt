@@ -2,6 +2,8 @@ package de.tzander.gradle.simplesematicversioning
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
+import kotlin.test.assertNotEquals
 
 class SemanticVersionTest {
 
@@ -44,6 +46,15 @@ class SemanticVersionTest {
         val semanticVersion = SemanticVersion("12.2.1.RELEASE")
         assertEquals(1, semanticVersion.patch)
         semanticVersion.increaseMinor()
-        assertEquals("12.3.0-RELEASE", semanticVersion.newVersion())
+        assertEquals("12.3.0.RELEASE", semanticVersion.newVersion())
+    }
+
+    @Test fun `can not handle release with hashtag`() {
+        assertFailsWith<IllegalArgumentException> {
+            val semanticVersion = SemanticVersion("12.2.1#RELEASE")
+            assertEquals(1, semanticVersion.patch)
+            semanticVersion.increaseMinor()
+            assertNotEquals("12.3.0#RELEASE", semanticVersion.newVersion())
+        }
     }
 }

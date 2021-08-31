@@ -5,18 +5,21 @@ class SemanticVersion constructor(version: String) {
     var major: Int
     var minor: Int
     var patch: Int
-    private var postfix: String = ""
-    var oldVersion: String = version
+    var originalVersionString: String = version
+    var oldVersionPlain: String
 
     init {
         val versionParts = version.split(".", "-")
         major = versionParts[0].toInt()
         minor = versionParts[1].toInt()
-        patch = versionParts[2].toInt()
-        if (versionParts.size > 3) {
-            val postfixString = versionParts[3]
-            postfix = "-$postfixString"
+        try {
+            patch = versionParts[2].toInt()
+            oldVersionPlain = "$major.$minor.$patch"
+        } catch (e: NumberFormatException) {
+            throw fail("Version string not valid, only . and - allowed after semantic version")
         }
+
+
     }
 
     fun increasePatch() {
@@ -35,6 +38,8 @@ class SemanticVersion constructor(version: String) {
     }
 
     fun newVersion(): String {
-        return "$major.$minor.$patch$postfix"
+        return originalVersionString.replace(oldVersionPlain, "$major.$minor.$patch")
     }
+
+    private fun fail(message: String): Nothing = throw IllegalArgumentException(message)
 }

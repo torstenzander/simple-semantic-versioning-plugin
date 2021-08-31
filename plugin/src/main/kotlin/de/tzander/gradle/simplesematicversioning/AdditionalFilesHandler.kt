@@ -15,7 +15,7 @@ class AdditionalFilesHandler constructor(var semanticVersion: SemanticVersion) {
                 prefix = prefixes?.get(i).toString()
             }
             val newVersionWithPrefix = prefix + semanticVersion.newVersion()
-            text = text.replace(prefix + semanticVersion.oldVersion, newVersionWithPrefix)
+            text = text.replace(prefix + semanticVersion.originalVersionString, newVersionWithPrefix)
             file.writeText(text)
             println("File updated: $it to $newVersionWithPrefix")
             i++
