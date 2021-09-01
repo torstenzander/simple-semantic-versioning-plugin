@@ -25,11 +25,11 @@ simplesematicversioning {
 
 ## Gradle task for increasing the version
 
-`./gradlew increasePatch`
+`gradle increasePatch`
 
-`./gradlew increaseMinor`
+`gradle increaseMinor`
 
-`./gradlew increaseMajor`
+`gradle increaseMajor`
 
 
 ## Possible version declarations
