@@ -5,21 +5,20 @@ import java.util.*
 
 class PropertyFileHandler constructor(private val projectDir: String) {
 
-    val PROPERTY_FILE = "/gradle.properties"
-
+    private val propertyFile = "/gradle.properties"
     private var properties: Properties = Properties()
-    private lateinit var propertyFile: File
+    private lateinit var file: File
 
     fun readVersionFromFile(): String {
-        propertyFile = File(projectDir + PROPERTY_FILE)
-        properties.load(propertyFile.inputStream())
+        file = File(projectDir + propertyFile)
+        properties.load(file.inputStream())
         return properties.getProperty("version")
     }
 
     fun savePropertyToFile(newVersion: String) {
         properties.setProperty("version", newVersion)
-        properties.store(propertyFile.writer(), null)
-        properties.load(propertyFile.inputStream())
+        properties.store(file.writer(), null)
+        properties.load(file.inputStream())
     }
 
 }
