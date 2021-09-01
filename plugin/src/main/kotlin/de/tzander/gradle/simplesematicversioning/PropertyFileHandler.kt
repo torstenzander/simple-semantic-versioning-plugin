@@ -3,9 +3,9 @@ package de.tzander.gradle.simplesematicversioning
 import java.io.File
 import java.util.*
 
-const val PROPERTY_FILE = "/gradle.properties"
-
 class PropertyFileHandler constructor(private val projectDir: String) {
+
+    val PROPERTY_FILE = "/gradle.properties"
 
     private var properties: Properties = Properties()
     private lateinit var propertyFile: File
@@ -21,6 +21,5 @@ class PropertyFileHandler constructor(private val projectDir: String) {
         properties.store(propertyFile.writer(), null)
         properties.load(propertyFile.inputStream())
     }
-
 
 }
