@@ -2,9 +2,9 @@ package de.tzander.gradle.simplesematicversioning
 
 import java.io.File
 
-class AdditionalFilesHandler constructor(var semanticVersion: SemanticVersion) {
+class AdditionalFilesHandler constructor(private var semanticVersion: SemanticVersion) {
 
-    var prefix: String = ""
+    private var prefix: String = ""
 
     fun replaceInFiles(rootDir: String, files: List<String>? = listOf(), prefixes: List<String>? = listOf()) {
         var i = 0
@@ -14,10 +14,10 @@ class AdditionalFilesHandler constructor(var semanticVersion: SemanticVersion) {
             if (!prefixes?.get(i).isNullOrBlank()) {
                 prefix = prefixes?.get(i).toString()
             }
-            val newVersionWithPrefix = prefix + semanticVersion.newVersion()
-            text = text.replace(prefix + semanticVersion.originalVersionString, newVersionWithPrefix)
+            val newVersion = semanticVersion.newVersion()
+            text = text.replace(prefix + semanticVersion.originalVersionString, prefix + newVersion)
             file.writeText(text)
-            println("File updated: $it to $newVersionWithPrefix")
+            println("The file $it was updated to $newVersion")
             i++
         }
     }

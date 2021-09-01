@@ -18,8 +18,6 @@ class SemanticVersion constructor(version: String) {
         } catch (e: NumberFormatException) {
             throw fail("Version string not valid, only . and - allowed after semantic version")
         }
-
-
     }
 
     fun increasePatch() {
