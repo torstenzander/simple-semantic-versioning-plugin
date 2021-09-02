@@ -36,7 +36,7 @@ class AdditionalFilesPrefixFunctionalTest {
         val text = file.readText()
 
         assertTrue(text.contains("api.13.0.0"))
-        assertTrue(result.output.contains("File updated: .gitlab-ci.yml"))
+        assertTrue(result.output.contains("The file .gitlab-ci.yml"))
     }
 
     @Test fun `increase minor version and update in configured file`() {
@@ -46,7 +46,7 @@ class AdditionalFilesPrefixFunctionalTest {
         val text = file.readText()
 
         assertTrue(text.contains("12.5.0"))
-        assertTrue(result.output.contains("File updated: .gitlab-ci.yml"))
+        assertTrue(result.output.contains("The file .gitlab-ci.yml"))
     }
 
     @Test fun `increase patch version and update in configured files`() {
@@ -56,8 +56,8 @@ class AdditionalFilesPrefixFunctionalTest {
         val text = file.readText()
 
         assertTrue(text.contains("12.4.3"))
-        assertTrue(result.output.contains("File updated: .gitlab-ci.yml"))
-        assertTrue(result.output.contains("File updated: Dockerfile"))
+        assertTrue(result.output.contains("The file .gitlab-ci.yml"))
+        assertTrue(result.output.contains("The file Dockerfile"))
     }
 
     private fun runGradleTask(task: String): BuildResult {
