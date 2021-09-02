@@ -5,7 +5,9 @@
 This plugin increases the semantic version in **gradle.properties** by one 
 for patch, minor and major version updates. 
 You can define additional files in your gradle.build configuration and the matching prefix.
+The prefix to be the same key number in the files and prefixes array in order to work.
 
+i.E.
 Only prefix=2.2.0 will be replaced in your additional files.
 
 In gradle.properties
@@ -19,17 +21,17 @@ plugins {
 
 simplesematicversioning {
     files = [".gitlab-ci.yml", "Dockerfile"]
-    prefixes = ["", ""]
+    prefixes = ["somePrefix", ""]
 }
 ```
 
 ## Gradle task for increasing the version
 
-`gradle increasePatch`
+`gradle increasePatch` 12.2.1 > 12.2.2
 
-`gradle increaseMinor`
+`gradle increaseMinor` 12.2.1 > 12.3.0
 
-`gradle increaseMajor`
+`gradle increaseMajor` 12.2.1 > 13.0.0
 
 
 ## Possible version declarations
