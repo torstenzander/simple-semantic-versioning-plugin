@@ -16,10 +16,10 @@ In gradle.properties
 
 ```
 plugins {
-    id 'de.tzander.gradle.simplesematicversioning' version '0.8.0'
+    id 'de.tzander.gradle.simplesemanticversioning' version '0.8.0'
 }
 
-simplesematicversioning {
+simplesemanticversioning {
     files = [".gitlab-ci.yml", "Dockerfile"]
     prefixes = ["somePrefix", ""]
 }

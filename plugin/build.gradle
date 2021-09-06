@@ -5,7 +5,7 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.14.0'
 }
 
-group = 'de.tzander.gradle.simplesematicversioning'
+group = 'de.tzander.gradle.simplesemanticversioning'
 version = '0.8.0'
 
 java {
@@ -34,10 +34,10 @@ pluginBundle {
 gradlePlugin {
     plugins {
         simplesematicversioning {
-            id = 'de.tzander.gradle.simplesematicversioning'
+            id = 'de.tzander.gradle.simplesemanticversioning'
             displayName = 'Simple Semantic Versioning Plugin'
             description = 'This plugin increases semantic versions by one. You can define additional files.'
-            implementationClass = 'de.tzander.gradle.simplesematicversioning.SimpleSemanticVersioningPlugin'
+            implementationClass = 'de.tzander.gradle.simplesemanticversioning.SimpleSemanticVersioningPlugin'
         }
     }
 }

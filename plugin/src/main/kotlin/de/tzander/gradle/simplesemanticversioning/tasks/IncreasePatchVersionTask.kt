@@ -1,16 +1,15 @@
-package de.tzander.gradle.simplesematicversioning.tasks
+package de.tzander.gradle.simplesemanticversioning.tasks
 
 import org.gradle.api.tasks.TaskAction
 
-abstract class IncreaseMinorVersionTask : AbstractVersionTask() {
+abstract class IncreasePatchVersionTask : AbstractVersionTask() {
 
     @TaskAction
     fun execute() {
-        semanticVersion.increaseMinor()
+        semanticVersion.increasePatch()
         propertyFileHandler.savePropertyToFile(semanticVersion.newVersion())
 
-        println("Updated to minor version: ${semanticVersion.newVersion()}")
+        println("Updated to patch version: ${semanticVersion.newVersion()}")
         additionalFilesHandler.replaceInFiles(project.rootDir.toString(), extension.files, extension.prefixes)
-
     }
 }
