@@ -1,8 +1,0 @@
-
-            plugins {
-                id("de.tzander.gradle.simplesemanticversioning")
-            }
-            simplesemanticversioning {
-                files = [".gitlab-ci.yml", "Dockerfile"]
-            }
-        

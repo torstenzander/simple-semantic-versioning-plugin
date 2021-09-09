@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="de.tzander.gradle.simplesemanticversioning.AdditionalFilesHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-09T07:28:50" hostname="Torstens-MacBook-Pro.local" time="0.067">
-  <properties/>
-  <testcase name="test string replace" classname="de.tzander.gradle.simplesemanticversioning.AdditionalFilesHandlerTest" time="0.067"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
