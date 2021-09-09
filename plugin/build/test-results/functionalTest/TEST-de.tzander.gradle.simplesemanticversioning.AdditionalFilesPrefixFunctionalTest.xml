@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.tzander.gradle.simplesemanticversioning.AdditionalFilesPrefixFunctionalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-09-09T07:28:29" hostname="Torstens-MacBook-Pro.local" time="13.338">
+  <properties/>
+  <testcase name="increase major version in file with prefix" classname="de.tzander.gradle.simplesemanticversioning.AdditionalFilesPrefixFunctionalTest" time="12.788"/>
+  <testcase name="increase patch version and update in configured files" classname="de.tzander.gradle.simplesemanticversioning.AdditionalFilesPrefixFunctionalTest" time="0.276"/>
+  <testcase name="increase minor version and update in configured file" classname="de.tzander.gradle.simplesemanticversioning.AdditionalFilesPrefixFunctionalTest" time="0.273"/>
+  <system-out><![CDATA[
+> Task :increaseMajor
+Updated to major version: 13.0.0
+The file .gitlab-ci.yml was updated to 13.0.0
+The file Dockerfile was updated to 13.0.0
+
+BUILD SUCCESSFUL in 8s
+1 actionable task: 1 executed
+
+> Task :increasePatch
+Updated to patch version: 12.4.3
+The file .gitlab-ci.yml was updated to 12.4.3
+The file Dockerfile was updated to 12.4.3
+
+BUILD SUCCESSFUL in 216ms
+1 actionable task: 1 executed
+
+> Task :increaseMinor
+Updated to minor version: 12.5.0
+The file .gitlab-ci.yml was updated to 12.5.0
+The file Dockerfile was updated to 12.5.0
+
+BUILD SUCCESSFUL in 216ms
+1 actionable task: 1 executed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

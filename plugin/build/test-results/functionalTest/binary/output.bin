@@ -1,0 +1,87 @@
+
+> Task :increaseMajor
+ Updated to major version: 13.0.0
+-The file .gitlab-ci.yml was updated to 13.0.0
+)The file Dockerfile was updated to 13.0.0
+
+BUILD SUCCESSFUL in 8s
+1 actionable task: 1 executed
+
+> Task :increasePatch
+ Updated to patch version: 12.4.3
+-The file .gitlab-ci.yml was updated to 12.4.3
+)The file Dockerfile was updated to 12.4.3
+
+BUILD SUCCESSFUL	 in 216ms
+1 actionable task: 1 executed
+
+> Task :increaseMinor
+ Updated to minor version: 12.5.0
+-The file .gitlab-ci.yml was updated to 12.5.0
+)The file Dockerfile was updated to 12.5.0
+
+BUILD SUCCESSFUL	 in 216ms
+1 actionable task: 1 executed
+
+> Task :increaseMinor
+ Updated to minor version: 12.5.0
+-The file .gitlab-ci.yml was updated to 12.5.0
+)The file Dockerfile was updated to 12.5.0
+
+BUILD SUCCESSFUL	 in 249ms
+1 actionable task: 1 executed
+
+> Task :increaseMajor
+ Updated to major version: 13.0.0
+-The file .gitlab-ci.yml was updated to 13.0.0
+)The file Dockerfile was updated to 13.0.0
+
+BUILD SUCCESSFUL	 in 185ms
+1 actionable task: 1 executed
+
+> Task :increaseMajor
+ Updated to major version: 13.0.0
+-The file .gitlab-ci.yml was updated to 13.0.0
+)The file Dockerfile was updated to 13.0.0
+
+BUILD SUCCESSFUL	 in 528ms
+1 actionable task: 1 executed
+	
+	> Task :increasePatch	
+	 Updated to patch version: 12.4.3	
+	-The file .gitlab-ci.yml was updated to 12.4.3	
+	)The file Dockerfile was updated to 12.4.3	
+	
+	BUILD SUCCESSFUL		 in 121ms	
+	1 actionable task: 1 executed	
+
+
+
+> Task :increaseMinor
+
+
+ Updated to minor version: 12.5.0
+
+
+-The file .gitlab-ci.yml was updated to 12.5.0
+
+
+)The file Dockerfile was updated to 12.5.0
+
+
+
+
+BUILD SUCCESSFUL
+	 in 317ms
+
+
+1 actionable task: 1 executed
+
+
+> Task :increasePatch
+ Updated to patch version: 12.4.3
+-The file .gitlab-ci.yml was updated to 12.4.3
+)The file Dockerfile was updated to 12.4.3
+
+BUILD SUCCESSFUL	 in 336ms
+1 actionable task: 1 executed
