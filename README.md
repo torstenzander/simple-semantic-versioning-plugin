@@ -2,6 +2,8 @@
 
 [![Gradle Package](https://github.com/torstenzander/simple-semantic-versioning-plugin/actions/workflows/gradle-publish.yml/badge.svg?branch=main&event=push)](https://github.com/torstenzander/simple-semantic-versioning-plugin/actions/workflows/gradle-publish.yml)
 
+[![Plugin Portal](https://plugins.gradle.org/plugin/de.tzander.gradle.simplesemanticversioning)]([![https://plugins.gradle.org/plugin/de.tzander.gradle.simplesemanticversioning])
+
 This plugin increases the semantic version in **gradle.properties** by one 
 for patch, minor and major version updates. 
 You can define additional files in your gradle.build configuration and the matching prefix.
